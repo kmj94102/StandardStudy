@@ -14,12 +14,14 @@ class ServiceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_service)
 
+        // startService() 방식
         findViewById<Button>(R.id.btnStartService).setOnClickListener {
             Intent(this, MyService::class.java).also {
                 startService(it)
             }
         }
 
+        // bindService() 방식
         findViewById<Button>(R.id.btnBindService).setOnClickListener {
             service?.play()
         }
@@ -41,7 +43,9 @@ class ServiceActivity : AppCompatActivity() {
     }
 
     private var service : MyBindService?= null
+    // bindService()에 전달된 서비스 바인딩에 대한 콜백을 정의합니다.
     private val connection : ServiceConnection = object : ServiceConnection {
+        // MyServiceBinder 에 바인딩하고 IBinder 를 캐스팅하고 MyServiceBinder 인스턴스를 가져옵니다.
         override fun onServiceConnected(className: ComponentName?, iBinder: IBinder?) {
             val binder = iBinder as MyBindService.MyServiceBinder
             service = binder.service

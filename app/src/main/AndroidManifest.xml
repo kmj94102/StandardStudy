@@ -10,14 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StandardStudy" >
         <service
-            android:name=".service.MyBindService"
-            android:enabled="true"
-            android:exported="true" >
+            android:name=".service.MyBindService" >
         </service>
         <service
-            android:name=".service.MyService"
-            android:enabled="true"
-            android:exported="true" />
+            android:name=".service.MyService" />
 
         <activity
             android:name=".service.ServiceActivity"
