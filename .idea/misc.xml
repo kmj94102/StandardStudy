@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_battery_charge.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_battery_row.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_bluetooth.xml" value="0.239" />
+        <entry key="app/src/main/res/layout/activity_broadcast.xml" value="0.360054347826087" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18697916666666667" />
         <entry key="app/src/main/res/layout/activity_service.xml" value="0.20208333333333334" />
       </map>

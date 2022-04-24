@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.standardstudy" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.standardstudy">
 
     <application
         android:allowBackup="true"
@@ -8,19 +9,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.StandardStudy" >
-        <service
-            android:name=".service.MyBindService" >
-        </service>
-        <service
-            android:name=".service.MyService" />
+        android:theme="@style/Theme.StandardStudy">
 
+        <receiver android:name=".broadcast.BroadcastActivity$PowerConnectionReceiver"
+            android:exported="false"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name=".broadcast.BroadcastActivity"
+            android:exported="false" />
+
+        <service android:name=".service.MyBindService"/>
+        <service android:name=".service.MyService" />
         <activity
             android:name=".service.ServiceActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
