@@ -1,12 +1,12 @@
 package com.example.standardstudy
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import androidx.annotation.IdRes
+import androidx.appcompat.app.AppCompatActivity
 import com.example.standardstudy.broadcast.BroadcastActivity
+import com.example.standardstudy.retrofit.RetrofitActivity
 import com.example.standardstudy.service.ServiceActivity
+import com.example.standardstudy.util.startActivity
+import com.example.standardstudy.workmanager.WorkManagerActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,15 +16,9 @@ class MainActivity : AppCompatActivity() {
 
         startActivity(R.id.btnService, ServiceActivity::class.java)
         startActivity(R.id.btnBroadcast, BroadcastActivity::class.java)
+        startActivity(R.id.btnWorkManager, WorkManagerActivity::class.java)
+        startActivity(R.id.btnRetrofit, RetrofitActivity::class.java)
 
-    }
-
-    private fun <T> startActivity(@IdRes id : Int, clazz: Class<T>) {
-        findViewById<Button>(id).setOnClickListener {
-            Intent(this, clazz).also {
-                startActivity(it)
-            }
-        }
     }
 
 }
