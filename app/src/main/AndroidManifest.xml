@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StandardStudy">
         <activity
+            android:name=".coroutine.CoroutineActivity"
+            android:exported="false" />
+        <activity
             android:name=".retrofit.RetrofitActivity"
             android:exported="false" />
         <activity
