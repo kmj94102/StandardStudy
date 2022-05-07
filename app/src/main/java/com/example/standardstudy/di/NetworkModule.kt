@@ -20,12 +20,14 @@ import javax.inject.Singleton
 object NetworkModule {
     @Provides
     @Singleton
-    fun provideOkHttpClient() : OkHttpClient =
+    fun provideOkHttpClient(
+        loggingInterceptor: HttpLoggingInterceptor
+    ) : OkHttpClient =
         OkHttpClient.Builder()
             .readTimeout(10, TimeUnit.SECONDS)
             .connectTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
-            .addInterceptor(getLoggingInterceptor())
+            .addInterceptor(loggingInterceptor)
             .build()
 
     @Provides
@@ -44,7 +46,9 @@ object NetworkModule {
             .addConverterFactory(gsonConverterFactory)
             .build()
 
-    private fun getLoggingInterceptor() : HttpLoggingInterceptor =
+    @Provides
+    @Singleton
+    fun provideLoggingInterceptor() : HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply {
             level = if(BuildConfig.DEBUG) {
                 HttpLoggingInterceptor.Level.BODY
