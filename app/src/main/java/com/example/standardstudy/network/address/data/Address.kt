@@ -42,7 +42,12 @@ data class AddressData(
     val common : AddressCommon,
     @SerializedName("juso")
     val address : List<Address>?
-)
+) {
+    fun toSearchResult() : SearchResult =
+        SearchResult(
+            list = address?.map { it.toSearchAddressResult() }
+        )
+}
 
 data class AddressCommon(
     val totalCount : String?, // 총 검색 데이터수
@@ -80,4 +85,19 @@ data class Address(
     val hstryYn : String?, // [2020년12월8일 추가된 항목] 변동이력여부(0: 현행 주소정보, 1: 요청변수의 keyword(검색어)가 변동된 주소정보에서 검색된 정보)
     val relJibun : String?, // [2020년12월8일 추가된 항목] 관련지번
     val hemdNm : String? // [2020년12월8일 추가된 항목] 관할주민센터 ※ 참고정보이며, 실제와 다를 수 있습니다.
+) {
+    fun toSearchAddressResult() : SearchAddressResult =
+        SearchAddressResult(
+            roadAddr = roadAddr,
+            jibunAddr = jibunAddr
+        )
+}
+
+data class SearchAddressResult(
+    val roadAddr : String?,
+    val jibunAddr : String?
+)
+
+data class SearchResult(
+    val list : List<SearchAddressResult>?
 )

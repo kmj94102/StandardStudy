@@ -1,14 +1,17 @@
 package com.example.standardstudy.coroutine
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import com.example.standardstudy.BaseActivity
 import com.example.standardstudy.R
 import com.example.standardstudy.databinding.ActivityCoroutineBinding
+import com.example.standardstudy.retrofit.RetrofitUtil
 import com.example.standardstudy.util.repeatOnStarted
 import com.example.standardstudy.util.toast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
 class CoroutineActivity : BaseActivity<ActivityCoroutineBinding, CoroutineViewModel>(R.layout.activity_coroutine) {

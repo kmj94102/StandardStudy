@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/ic_battery_charge.xml" value="0.239" />
         <entry key="app/src/main/res/drawable/ic_battery_row.xml" value="0.239" />
         <entry key="app/src/main/res/drawable/ic_bluetooth.xml" value="0.239" />
+        <entry key="app/src/main/res/layout/activity_aac.xml" value="0.38697916666666665" />
         <entry key="app/src/main/res/layout/activity_broadcast.xml" value="0.360054347826087" />
         <entry key="app/src/main/res/layout/activity_coroutine.xml" value="0.360054347826087" />
         <entry key="app/src/main/res/layout/activity_hilt.xml" value="0.23052536231884058" />

@@ -15,7 +15,7 @@ class CoroutineViewModel @Inject constructor(
 
     fun selectAddress(keyword : String, currentPage: Int) = viewModelScope.launch {
         repository.selectAddress(keyword, currentPage)?.let {
-            event(AddressEvent.AddressResultSuccess(result = it.results))
+//            event(AddressEvent.AddressResultSuccess(result = it.results))
         } ?: event(AddressEvent.Error)
     }
 

@@ -2,6 +2,7 @@ package com.example.standardstudy
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.standardstudy.aac.AacActivity
 import com.example.standardstudy.broadcast.BroadcastActivity
 import com.example.standardstudy.coroutine.CoroutineActivity
 import com.example.standardstudy.hilt.HiltActivity
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(R.id.btnRetrofit, RetrofitActivity::class.java)
         startActivity(R.id.btnCoroutine, CoroutineActivity::class.java)
         startActivity(R.id.btnHilt, HiltActivity::class.java)
+        startActivity(R.id.btnAac, AacActivity::class.java)
 
     }
 

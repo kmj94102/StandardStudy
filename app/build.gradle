@@ -42,6 +42,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'com.example.standardstudy'
 }
 
 dependencies {
@@ -72,11 +73,11 @@ dependencies {
     // okhttp - https://github.com/square/okhttp (Apache 2.0)
     implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
-
-    // Coroutine
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.3"
+//
+//    // Coroutine
+//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.4.3"
 
     // hilt
     implementation "com.google.dagger:hilt-android:2.38.1"
