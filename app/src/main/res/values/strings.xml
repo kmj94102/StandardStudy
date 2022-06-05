@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">StandardStudy</string>
+    <string name="increase">누적 : %d</string>
 </resources>

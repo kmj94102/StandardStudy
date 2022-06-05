@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StandardStudy">
         <activity
+            android:name=".databinding.BindingTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".aac.AacActivity"
             android:exported="false" />
         <activity

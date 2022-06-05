@@ -28,6 +28,7 @@ class TestWorker(appContext: Context, workerParams: WorkerParameters) : Worker(a
     companion object {
         const val WORKER_INPUT_DATA = "worker_input_data"
         const val SUCCESS = "success"
+        const val FAILURE = "failure"
     }
 
 }
