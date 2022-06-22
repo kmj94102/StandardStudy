@@ -13,6 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StandardStudy">
         <activity
+            android:name=".compose.ComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose"
+            android:theme="@style/Theme.StandardStudy" />
+        <activity
+            android:name=".antonio.AntonioActivity"
+            android:exported="false" />
+        <activity
             android:name=".databinding.BindingTestActivity"
             android:exported="false" />
         <activity

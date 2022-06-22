@@ -3,12 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/compose-model-1655895143693.xml" value="0.9" />
+        <entry key="../../../../layout/compose-model-1655895308773.xml" value="0.16131756756756757" />
+        <entry key="../../../../layout/compose-model-1655895653010.xml" value="0.33" />
+        <entry key="../../../../layout/compose-model-1655900102088.xml" value="0.3257191201353638" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.12008072653884964" />
         <entry key="app/src/main/res/drawable/ic_battery_charge.xml" value="0.239" />
         <entry key="app/src/main/res/drawable/ic_battery_row.xml" value="0.239" />
         <entry key="app/src/main/res/drawable/ic_bluetooth.xml" value="0.239" />
         <entry key="app/src/main/res/layout/activity_aac.xml" value="0.38697916666666665" />
+        <entry key="app/src/main/res/layout/activity_antonio.xml" value="0.359375" />
         <entry key="app/src/main/res/layout/activity_binding_test.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_broadcast.xml" value="0.360054347826087" />
+        <entry key="app/src/main/res/layout/activity_compose.xml" value="0.18211752786220872" />
         <entry key="app/src/main/res/layout/activity_coroutine.xml" value="0.360054347826087" />
         <entry key="app/src/main/res/layout/activity_hilt.xml" value="0.23052536231884058" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18697916666666667" />
@@ -16,6 +23,8 @@
         <entry key="app/src/main/res/layout/activity_service.xml" value="0.20208333333333334" />
         <entry key="app/src/main/res/layout/activity_work_manager.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_worker.xml" value="0.20677083333333332" />
+        <entry key="app/src/main/res/layout/sample_my_view.xml" value="0.17477203647416414" />
+        <entry key="app/src/main/res/layout/view_holder_content_small.xml" value="0.3734375" />
       </map>
     </option>
   </component>
