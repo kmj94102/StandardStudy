@@ -1,20 +1,20 @@
 package com.example.standardstudy.compose
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -23,13 +23,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.*
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -48,8 +53,8 @@ class ComposeActivity : ComponentActivity() {
 
         setContent {
             StandardStudyTheme {
-//                    Greeting("Android")
-                ContentView()
+                Greeting("Android")
+//                ContentView()
             }
         }
 
@@ -63,6 +68,7 @@ fun Greeting(name: String) {
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colors.background
     ) {
+        val context = LocalContext.current
         Scaffold(
             topBar = {
                 TopAppBar(
@@ -77,6 +83,7 @@ fun Greeting(name: String) {
                         "++++",
                         "${System.currentTimeMillis()} 눌렸다"
                     )
+                    context.startActivity(Intent(context, ComposeEx5Activity::class.java))
                 }) {
                     Text(text = "+")
                 }
@@ -84,8 +91,11 @@ fun Greeting(name: String) {
         ) {
 //            Text(text = "안녕하세요")
 //            ColumnTest()
-//            RowBoxTest()
-            ColumnBoxTest()
+//            RowDummyBoxTest()
+//            ColumnDummyBoxTest()
+//            BoxDummyBoxTest()
+//            BoxWithConstraintDummyBoxTest()
+            TextContainer()
         }
     }
 
@@ -143,7 +153,7 @@ fun RowTest() {
 // Alignment.CenterVertically : 컨테이너의 수직방향으로 중앙에 두기
 // 현재는 Row 콤퍼저블 안에서 align 이 들어가기 때문 CenterVertically
 @Composable
-fun RowBoxTest() {
+fun RowDummyBoxTest() {
     Row(
         modifier = Modifier
             .background(Color.White)
@@ -158,7 +168,7 @@ fun RowBoxTest() {
 }
 
 @Composable
-fun ColumnBoxTest() {
+fun ColumnDummyBoxTest() {
     Column(
         modifier = Modifier
             .background(Color.White)
@@ -173,19 +183,183 @@ fun ColumnBoxTest() {
 }
 
 @Composable
-fun DummyBox(modifier: Modifier = Modifier) {
+fun BoxDummyBoxTest() {
+    Box(
+        modifier = Modifier
+            .background(Color.White)
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        DummyBox(modifier = Modifier.size(200.dp), color = Color.Green)
+        DummyBox(modifier = Modifier.size(150.dp), color = Color.Yellow)
+        DummyBox(color = Color.Blue)
+    }
+
+}
+
+@Composable
+fun BoxWithConstraintDummyBoxTest() {
+    BoxWithConstraints(
+        modifier = Modifier
+            .background(Color.White)
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+
+        if (this.minWidth > 400.dp) {
+            DummyBox(modifier = Modifier.size(200.dp), color = Color.Green)
+        } else {
+            DummyBox(modifier = Modifier.size(200.dp), color = Color.Yellow)
+        }
+
+        Column {
+            BoxWithConstraintItem(
+                modifier = Modifier
+                    .size(300.dp)
+                    .background(Color.Green)
+            )
+            BoxWithConstraintItem(
+                modifier = Modifier
+                    .size(200.dp)
+                    .background(Color.Yellow)
+            )
+        }
+//        DummyBox(modifier = Modifier.size(200.dp), color = Color.Green)
+//        DummyBox(modifier = Modifier.size(150.dp), color = Color.Yellow)
+//        DummyBox(color = Color.Blue)
+    }
+
+}
+
+@Composable
+fun BoxWithConstraintItem(modifier: Modifier = Modifier) {
+    BoxWithConstraints(
+        modifier = modifier,
+        contentAlignment = Alignment.Center
+    ) {
+        if (this.minWidth > 200.dp) {
+            Text(text = "이것은 큰 상자이다.")
+        } else {
+            Text(text = "이것은 작은 상자이다.")
+        }
+    }
+}
+
+@Composable
+fun DummyBox(modifier: Modifier = Modifier, color: Color? = null) {
     val red = Random.nextInt(256)
     val green = Random.nextInt(256)
     val blue = Random.nextInt(256)
 
-    val color = Color(red, green, blue)
+    val resultColor = color ?: Color(red, green, blue)
 
+    val context = LocalContext.current
     Box(
         modifier = modifier
             .size(100.dp)
-            .background(color)
+            .background(resultColor)
+            .clickable {
+                context.startActivity(
+                    Intent(context, ComposeEx2Activity::class.java)
+                )
+            }
     ) {}
 
+}
+
+@Composable
+fun TextContainer() {
+    val name = "민재"
+    val scrollState = rememberScrollState()
+
+    Column(
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(10.dp)
+            .verticalScroll(scrollState)
+    ) {
+        Text(
+            text = "안녕~~~ 내이름은 $name 입니다.",
+            style = TextStyle(textAlign = TextAlign.Center),
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.Yellow)
+        )
+        Text(
+            text = "안녕~~~ 내이름은 $name 입니다.",
+            style = TextStyle(textAlign = TextAlign.End),
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.Yellow)
+        )
+        Text(
+            text = "안녕~~~ 내이름은 $name 입니다.",
+            style = TextStyle(textAlign = TextAlign.Start),
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.Yellow)
+        )
+        Text(
+            text = stringResource(id = R.string.dummy_short_text),
+            maxLines = 2,
+            overflow = TextOverflow.Ellipsis,
+            style = TextStyle(
+                textAlign = TextAlign.Start,
+                textDecoration = TextDecoration.combine(
+                    listOf(
+                        TextDecoration.Underline,
+                        TextDecoration.LineThrough
+                    )
+                )
+            ),
+            fontWeight = FontWeight.ExtraBold,
+            fontSize = 22.sp,
+            fontFamily = FontFamily(Font(R.font.nanum_gothic_bold)),
+            lineHeight = 45.sp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.Yellow)
+        )
+        Text(text = buildAnnotatedString {
+            append("안녕하세요?")
+            withStyle(
+                style = SpanStyle(
+                    color = Color.Blue,
+                    fontSize = 40.sp,
+                    fontWeight = FontWeight.ExtraBold
+                )
+            ) {
+                append("김민재 입니다.")
+            }
+            append("\n잘 부탁드립니다~")
+        })
+
+        val context = LocalContext.current
+        ClickableText(text = AnnotatedString("클릭미"), onClick = {
+            Toast.makeText(context, "클릭미 눌렀다", Toast.LENGTH_SHORT).show()
+        })
+
+        val word = stringResource(id = R.string.dummy_long_text)
+        val wordList = word.split(" ")
+
+        Text(text = buildAnnotatedString {
+            wordList.forEach {
+                if (it.contains("별")) {
+                    withStyle(
+                        style = SpanStyle(
+                            color = Color.Blue,
+                            fontWeight = FontWeight.ExtraBold
+                        )
+                    ) {
+                        append(it)
+                    }
+                } else {
+                    append(it)
+                }
+            }
+        })
+    }
 }
 
 // Ex 2)

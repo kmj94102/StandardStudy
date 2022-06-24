@@ -1,6 +1,7 @@
 package com.example.standardstudy
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.standardstudy.aac.AacActivity
 import com.example.standardstudy.antonio.AntonioActivity
@@ -30,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         startActivity(R.id.btnDataBinding, BindingTestActivity::class.java)
         startActivity(R.id.btnAntonio, AntonioActivity::class.java)
         startActivity(R.id.btnCompose, ComposeActivity::class.java)
+
+        findViewById<Button>(R.id.btnCompose).performClick()
 
     }
 

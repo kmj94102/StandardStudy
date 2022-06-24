@@ -1,6 +1,16 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">StandardStudy</string>
     <string name="increase">누적 : %d</string>
     <string name="title_activity_compose">ComposeActivity</string>
     <string name="list">리스트</string>
+    <string name="title_activity_compose_ex2">ComposeEx2Activity</string>
+    <string name="dummy_short_text">내 이름을 불러 멀리 벌써 듯합니다. 나의 별들을 묻힌 나의 멀리 버리었습니다. 나는 별들을 다하지 마디씩 별에도 소녀들의 헤일 봅니다.</string>
+    <string name="dummy_long_text">시인의 말 하나의 새겨지는 벌레는 딴은 듯합니다. 그러나 언덕 이국 것은 듯합니다. 하나에 한 사랑과 오면 때 헤는 있습니다. 헤일 파란 이국 별 하나에 사랑과 된 거외다. 새겨지는 우는 봄이 하나의 옥 사랑과 봅니다. 쉬이 써 나는 프랑시스 속의 버리었습니다. 무덤 청춘이 이런 어머님, 있습니다. 까닭이요, 시인의 위에 있습니다. 경, 가난한 오면 멀리 슬퍼하는 그리워 하나에 새겨지는 계십니다. 가슴속에 강아지, 비둘기, 듯합니다. 쉬이 별 밤을 하나에 새겨지는 흙으로 아스라히 봅니다.
+
+우는 사랑과 이름을 시인의 너무나 별 언덕 없이 책상을 봅니다. 오는 하나의 차 소녀들의 있습니다. 하나에 못 밤을 가슴속에 까닭입니다. 벌레는 덮어 별을 아직 이웃 없이 별 하나에 불러 봅니다. 사람들의 별 같이 하나에 다하지 계절이 패, 그러나 계십니다. 계절이 가을 써 어머님, 멀듯이, 부끄러운 노새, 벌레는 듯합니다. 별빛이 다하지 까닭이요, 까닭입니다. 아름다운 소녀들의 위에 라이너 흙으로 추억과 버리었습니다. 덮어 이름자를 못 강아지, 하나에 벌레는 쉬이 멀리 그리고 봅니다.
+
+노루, 나는 이름자 내린 흙으로 멀듯이, 아스라히 버리었습니다. 이웃 가슴속에 헤일 못 별들을 새워 버리었습니다. 이름자 새겨지는 하나에 당신은 많은 했던 무성할 이름과, 그리워 있습니다. 어머니, 별 남은 다하지 있습니다. 아침이 없이 아이들의 별 불러 이런 밤을 이 이름과, 있습니다. 별 어머님, 아무 까닭입니다. 불러 가을 것은 경, 딴은 말 아무 까닭입니다. 이 이름과, 북간도에 별이 어머님, 한 까닭입니다. 나는 이름자 위에 프랑시스 나는 하늘에는 라이너 거외다.</string>
+    <string name="title_activity_compose_ex3">ComposeEx3Activity</string>
+    <string name="title_activity_compose_ex4">ComposeEx4Activity</string>
+    <string name="title_activity_compose_ex5">ComposeEx5Activity</string>
 </resources>
