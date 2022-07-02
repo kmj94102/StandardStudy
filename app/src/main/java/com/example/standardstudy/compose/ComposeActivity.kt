@@ -43,8 +43,6 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.example.standardstudy.R
 import com.example.standardstudy.compose.ui.theme.StandardStudyTheme
-import com.example.standardstudy.compose.util.DummyDataProvider
-import com.example.standardstudy.compose.util.RandomUser
 import kotlin.random.Random
 
 class ComposeActivity : ComponentActivity() {

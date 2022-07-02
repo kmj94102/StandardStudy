@@ -13,4 +13,6 @@
     <string name="title_activity_compose_ex3">ComposeEx3Activity</string>
     <string name="title_activity_compose_ex4">ComposeEx4Activity</string>
     <string name="title_activity_compose_ex5">ComposeEx5Activity</string>
+    <string name="title_activity_compose_ex6">ComposeEx6Activity</string>
+    <string name="title_activity_compose_ex7">ComposeEx7Activity</string>
 </resources>

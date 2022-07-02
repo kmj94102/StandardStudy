@@ -1,4 +1,4 @@
-package com.example.standardstudy.compose.util
+package com.example.standardstudy.compose
 
 data class RandomUser(
     val name: String = "이름",

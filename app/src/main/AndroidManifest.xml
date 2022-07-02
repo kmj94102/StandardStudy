@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,7 +11,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.StandardStudy">
+        android:theme="@style/Theme.StandardStudy" >
+        <activity
+            android:name=".compose.ComposeEx7Activity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_ex7"
+            android:theme="@style/Theme.StandardStudy" />
+        <activity
+            android:name=".compose.ComposeEx6Activity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_ex6"
+            android:theme="@style/Theme.StandardStudy" />
         <activity
             android:name=".compose.ComposeEx5Activity"
             android:exported="false"
@@ -62,7 +72,7 @@
         <receiver
             android:name=".broadcast.BroadcastActivity$PowerConnectionReceiver"
             android:exported="false"
-            tools:ignore="Instantiatable">
+            tools:ignore="Instantiatable" >
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
@@ -81,7 +91,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
